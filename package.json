@@ -1,0 +1,23 @@
+{
+  "name": "inm",
+  "version": "1.0.0",
+  "description": "web faa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mosnchina/Inm.git"
+  },
+  "author": "mosnchina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mosnchina/Inm/issues"
+  },
+  "homepage": "https://github.com/mosnchina/Inm#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.83.0"
+  }
+}
