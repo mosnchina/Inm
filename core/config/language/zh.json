@@ -1,0 +1,45 @@
+{
+    "description": "本地集成管理工具",
+    "config": {
+        "description": "配置管理工程",
+        "language": {
+            "description": "配置语言",
+            "choose": "请输入提示语言名：",
+            "current": "当前配置语言为：",
+            "list": "支持选择的语言：",
+            "listName": "语言名",
+            "listChoose": "配置中",
+            "empty": "提示语言不能为空",
+            "success": "更新语言配置成功",
+            "error": "提示语言不存在"
+        }
+    },
+    "update": {
+        "description": "更新管理工程",
+        "all": "更新全部数据",
+        "framework": {
+            "current": "管理工程当前版本：",
+            "check": "检查管理工程版本...",
+            "last": "管理工程最新版本：",
+            "start": "正在更新管理工程...",
+            "error": "管理工程更新失败：",
+            "success": "管理工程更新成功",
+            "new": "管理工程为最新版本"
+        },
+        "works": {
+            "success": "所有依赖更新成功"
+        }
+    },
+    "project": {
+        "description": "项目管理",
+        "main": {
+            "currentVersion": "管理工程当前版本"
+        }
+    },
+    "build": {
+        "description": "构建项目命令",
+        "main": {
+            "currentVersion": "管理工程当前版本"
+        }
+    }
+}

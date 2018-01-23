@@ -1,0 +1,84 @@
+#!/usr/bin/env node
+
+
+/** 
+ * integration 集成化
+ * normalization 规范化
+ * Management 管理化 
+ * @author mosnchina
+ */
+
+
+//命令行管理工具
+const program = require('commander');
+
+//语言
+const language = require('../core/config/get').language();
+
+//设置
+const setConfig = require('../core/config/set');
+
+
+//版本、描述
+program
+  .version(require('../package').version)
+  .description(language.description)
+
+
+//设置
+program
+  .command('config')
+  .alias('c')
+  .description(language.config.description)
+  .option("-l, --language", language.config.language.description)
+  .action(function (options) {
+    if (options.language) {
+      setConfig.language()
+    }
+  });
+
+
+//更新
+program
+  .command('update')
+  .alias('u')
+  .description(language.update.description)
+  .option("-a, --all", language.update.all)
+  .action(function (options) {
+    if (options.all) {
+      require('../core/update/works')()
+    }
+    require('../core/update/framework')()
+  });
+
+
+//项目管理
+program
+  .command('project')
+  .alias('p')
+  .description(language.project.description)
+  .option("-i, --init", "Create a project") //创建项目
+  .option("-l, --list", "support for template") //支持模版
+  .option("-g, --get [type]", "Access to project") //获取项目（svn,git）
+  .action(function (options) {
+    //var sss=JSON.stringify(options);
+    console.log(options);
+    //console.log('setup for %s env(s) with %s mode', env, sss);
+    // console.log('setup for %s env(s) with %s mode', env, mode);
+  });
+
+
+program
+  .command('build [env]')
+  .alias('bd')
+  .description(language.build.description)
+  .option("-s, --setup_mode [mode]", "Which setup mode to use")
+  .action(function (env, options) {
+    console.log(env);
+    console.log(options);
+    // var mode = options.setup_mode || "normal";
+    // env = env || 'all';
+    // console.log('setup for %s env(s) with %s mode', env, mode);
+  });
+
+program.parse(process.argv)
